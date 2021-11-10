@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var lastDigit = function (str1, str2) {
+            if (str2 == 0) return 1;
+            let num1 = Number(str1.charAt(str1.length - 1));
+            let num2 = Number(str2.charAt(str2.length - 1));
+            let res = Math.pow(num1, num2).toString();
+
+            return Number(res.charAt(res.length - 1));
+        }
+
+
+        console.log(lastDigit("3715290469715693021198967285016729344580685479654510946723",
+        "68819615221552997273737174557165657483427362207517952651"))
+    </script>
+</body>
+
+
+</html>
