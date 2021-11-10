@@ -4,7 +4,7 @@ const search = document.querySelector('input');
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    fetch(`http://127.0.0.1:3000/weather?location=${search.value || 'London'}`).then(response =>
+    fetch(`/weather?location=${search.value || 'London'}`).then(response =>
         response.json().then(data => {
             if (data.error) {
                 console.log(data.error);

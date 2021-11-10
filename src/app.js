@@ -5,6 +5,7 @@ const geocode = require('../utils/geocode.js');
 const forecast = require('../utils/forecast.js');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, '../templates/partials'));
@@ -76,8 +77,8 @@ app.get('*', (req, res) => {
     res.render('404');
 })
 
-app.listen(3000, () => {
-    console.log('Server is app')
+app.listen(port, () => {
+    console.log('Server is app on port' + port)
 });
 
 // console.log(test("stop Making spongebob Memes!"));
