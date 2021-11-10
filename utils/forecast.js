@@ -6,7 +6,9 @@ const forecast = (lat, long, callback) => {
     request({
         url: url,
         json: true
-    }, (error, {body}) => {
+    }, (error, {
+        body
+    }) => {
         if (error) {
             callback("No connection to weather API", undefined);
             return;
@@ -16,7 +18,7 @@ const forecast = (lat, long, callback) => {
             return;
         }
         callback(undefined, {
-            description: body.current.weather_descriptions[0],
+            description: body.current.weather_descriptions[0] + ', but it is never true!',
             temperature: body.current.temperature,
             feelslike: body.current.feelslike
         })
